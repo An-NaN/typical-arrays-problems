@@ -1,12 +1,27 @@
 
 exports.min = function min (array) {
-  return 0;
+	if (array === undefined || array.length === 0) { array = 0 }
+	else {
+		array = (Array.isArray(array)) ? array : Array.from(arguments);
+		array = Math.min(...array);
+	}
+  return array;
 }
 
 exports.max = function max (array) {
-  return 0;
+	if (array === undefined || array.length === 0) { array = 0 }
+	else {
+		array = (Array.isArray(array)) ? array : Array.from(arguments);
+		array = Math.max(...array);
+	}
+  return array;
 }
 
 exports.avg = function avg (array) {
-  return 0;
+	if (array === undefined || array.length === 0) { array = 0 }
+	else {
+		array = (Array.isArray(array)) ? array : Array.from(arguments);
+		array = array.reduce((sum, current) => sum + current, 0) / array.length;
+	}
+  return array;
 }
